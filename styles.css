@@ -6,7 +6,10 @@
   --accent: #FFD93D; /* Warm Yellow */
   --text-dark: #2D3436;
   --text-light: #636e72;
-  --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* Background presets */
+  --bg-landing: radial-gradient(circle at center, rgba(108, 99, 255, 0.12) 0%, transparent 45%), linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  --bg-inside: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  --bg-gradient: var(--bg-inside);
   --glass-bg: rgba(255, 255, 255, 0.75);
   --glass-border: 1px solid rgba(255, 255, 255, 0.6);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
@@ -20,8 +23,8 @@
 body {
   font-family: 'Nunito', sans-serif;
   color: var(--text-dark);
-  background: #E0C3FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  /* Use inside-page background by default */
+  background: var(--bg-inside);
   min-height: 100vh;
   overflow-x: hidden;
   line-height: 1.6;
@@ -93,7 +96,23 @@ h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color:
 /* --- Landing Page --- */
 #landing-view {
   display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-  background: radial-gradient(circle at center, rgba(108, 99, 255, 0.1), transparent);
+  /* Use the landing background preset */
+  background: var(--bg-landing);
+}
+
+/* Utility classes to explicitly apply backgrounds and enable animation */
+.bg-1 { background: var(--bg-landing) !important; }
+.bg-2 { background: var(--bg-inside) !important; }
+
+/* Animated gradient effect (subtle, slow shifting) */
+.animated-bg {
+  background-size: 200% 200%;
+  animation: gradientShift 12s ease-in-out infinite;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .door-knocker {
   width: 200px; height: 200px; background: white; border-radius: 50%;
