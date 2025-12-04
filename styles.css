@@ -147,6 +147,24 @@ h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color:
 .lesson-detail { margin-top: 15px; border-top: 1px dashed rgba(0,0,0,0.1); padding-top: 15px;}
 .lesson-detail h5 { color: var(--primary); font-size: 1rem; margin-bottom: 5px;}
 
+/* --- Gallery for Seasons --- */
+.season-gallery { max-width: 1100px; margin: 0 auto; }
+.season-gallery .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.season-gallery .gallery-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.season-gallery .gallery-grid img:hover { transform: scale(1.03); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+
+
 /* --- Profile Page --- */
 .profile-layout { display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
 .sidebar-menu { display: flex; flex-direction: column; gap: 10px; }
