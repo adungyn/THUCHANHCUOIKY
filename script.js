@@ -48,15 +48,20 @@ function randomGreeting() {
 
 /* --- 3. SEASONS LOGIC (Toggle giữa Mùa 1 và Mùa 2) --- */
 function toggleSeason(season, elmnt) {
-  document.getElementById('season-1').style.display = 'none';
-  document.getElementById('season-2').style.display = 'none';
+  // Hide both seasons
+  const s1 = document.getElementById('season-1');
+  const s2 = document.getElementById('season-2');
+  if (s1) s1.style.display = 'none';
+  if (s2) s2.style.display = 'none';
   
-  const targetSeason = document.getElementById('season-' + season);
+  // Show the target season based on parameter (s1 or s2)
+  const seasonMap = { 's1': 'season-1', 's2': 'season-2' };
+  const targetSeason = document.getElementById(seasonMap[season]);
   if (targetSeason) {
     targetSeason.style.display = 'block';
   }
 
-  // Cập nhật trạng thái nút (bỏ outline khi active)
+  // Update button states (remove outline when active)
   document.querySelectorAll('#season-view .btn-modern').forEach(btn => btn.classList.add('btn-outline'));
   if (elmnt) {
     elmnt.classList.remove('btn-outline');
