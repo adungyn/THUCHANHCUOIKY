@@ -1,11 +1,10 @@
 :root {
-  --primary: #6C63FF; /* Modern Purple */
+  --primary: #6C63FF; 
   --primary-dark: #4A148C;
-  --secondary: #FF6584; /* Soft Pink Accent */
-  --accent: #FFD93D; /* Warm Yellow */
+  --secondary: #FF6584; 
+  --accent: #FFD93D; 
   --text-dark: #2D3436;
   --text-light: #636e72;
-  /* Background presets */
   --bg-landing: url('images/bg1.jpg') center/cover no-repeat fixed;
   --bg-inside: url('images/bg2.jpg') center/cover no-repeat fixed;
   --bg-gradient: var(--bg-inside);
@@ -21,7 +20,6 @@
 body {
   font-family: 'Nunito', sans-serif;
   color: #ffffff;
-  /* Use inside-page background by default */
   background: var(--bg-inside);
   min-height: 100vh;
   overflow-x: hidden;
@@ -29,12 +27,10 @@ body {
   position: relative;
 }
 
-/* Overlay + blur that sits above the background image but behind page content */
 :root {
   --bg-overlay: rgba(0,0,0,0.22);
   --bg-overlay-landing: rgba(0,0,0,0.36);
   --bg-blur: 6px;
-  /* stronger inside-page overlay / blur */
   --bg-overlay-inside: rgba(0,0,0,0.36);
   --bg-blur-inside: 10px;
 }
@@ -47,7 +43,7 @@ body::before {
   background: var(--bg-overlay);
   backdrop-filter: blur(var(--bg-blur));
   -webkit-backdrop-filter: blur(var(--bg-blur));
-  z-index: -1; /* sits behind all content */
+  z-index: -1; 
 }
 
 body::after {
