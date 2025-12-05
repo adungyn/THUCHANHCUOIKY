@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nhím Tập Gieo | The Purple House</title>
   
-  <!-- External CSS and Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -13,10 +12,8 @@
 </head>
 <body>
 
-  <!-- Background Particles -->
   <div class="particles" id="particles"></div>
 
-  <!-- NAVIGATION (Hidden on Landing) -->
   <nav class="nav-wrapper" id="navbar" style="display: none;">
     <div class="brand-logo" onclick="goHome()">
       <img src="images/logo.png" alt="Logo" />
@@ -33,7 +30,6 @@
   </nav>
 
   <main>
-    <!-- 1. LANDING PAGE (GÕ CỬA) -->
     <section id="landing-view" class="view-section" style="display: flex;">
       <div class="glass-panel" style="padding: 40px; text-align: center; max-width: 580px;">
         <img src="images/logo.png" alt="Logo" style="height: 120px; width: auto; margin-bottom: 30px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
@@ -47,7 +43,6 @@
       </div>
     </section>
 
-    <!-- 2. HUB PAGE (NHÀ CHUNG) -->
     <section id="hub-view" class="view-section">
       <div class="container">
         <div class="hub-header">
@@ -96,7 +91,6 @@
         </div>
 
         
-        <!-- Certificate (added to Hub) -->
         <div class="glass-panel hub-certificate" style="padding: 20px; margin-top: 30px; text-align: center;">
           <div style="display:flex; justify-content:center;">
             <img src="images/Certificate.png" alt="Chứng nhận" style="max-width:720px; width:90%; height:auto; border-radius:12px; box-shadow: 0 12px 30px rgba(0,0,0,0.2); border: 6px solid white;" />
@@ -114,7 +108,6 @@
                 <span style="font-weight: 700;">Tầm nhìn cụ thể:</span> Giúp các em không chỉ tiếp cận kiến thức khoa học cơ bản (STEM), mà còn trực tiếp trải nghiệm – thử nghiệm – chế tạo, từ đó hình thành tư duy phản biện, kỹ năng giải quyết vấn đề và tình yêu với việc khám phá.
             </p>
         </div>
-        <!-- Hub gallery (moved images from season) -->
         <div class="season-gallery hub-gallery" style="padding: 20px; margin-top: 0px;">
           <div class="gallery-grid hub-gallery-grid">
             <figure class="hub-photo"><img src="images/img-01.jpg" alt="img-01"><figcaption>Ảnh 01 - Mô tả</figcaption></figure>
@@ -137,7 +130,6 @@
       </div>
     </section>
 
-    <!-- 3. SEASON PAGE (HÀNH TRÌNH) -->
     <section id="season-view" class="view-section">
       <div class="container">
         <h2 class="heading-gradient-light text-center mb-30" style="font-size: 3rem;">HÀNH TRÌNH CỦA CHÚNG TA</h2>
@@ -146,13 +138,11 @@
           <button class="btn-modern btn-outline" onclick="toggleSeason('s2', this)" style="margin-left: 10px;"><i class="fa-solid fa-flask"></i> Mùa 2: STEM</button>
         </div>
 
-        <!-- Season 1 Content (Kỹ Năng Xã Hội) -->
         <div id="season-1" class="glass-panel" style="padding: 30px;">
           <h3 style="color: #570586; margin-bottom: 20px; text-shadow: none;">Mùa 1: Kỹ Năng Xã Hội (2024) - Xây Dựng Gai Tri Thức</h3>
           <p style="color: rgb(104, 60, 129); margin-bottom: 30px;"> Đây là mùa đầu tiên, khi Nhím bắt đầu hành trình gieo tri thức. Chúng mình đã học được cách giao tiếp, lắng nghe nhau, làm việc nhóm, và dám nói lên tiếng nói của mình. Đôi lúc, có bỡ ngỡ, có vụng về, nhưng từng bước một, dần tự tin hơn, mở lòng hơn. Có thể nói Mùa 1 là nền tảng, giúp học cách đứng vững, hiểu bản thân muốn gì và người khác cần gì, trước khi tạo ra giá trị cho cộng đồng.
           </p>
           <div class="timeline">
-            <!-- Buổi 1: Tớ Là Ai? -->
             <div class="timeline-item">
               <div class="timeline-content glass-panel">
                 <h4 style="color: var(--text-light); text-shadow: none;">Buổi 1: Tớ Là Ai? (Nhận diện bản thân & Phòng vệ)</h4>
@@ -163,7 +153,6 @@
                 </div>
               </div>
             </div>
-            <!-- Buổi 2: Tớ Hiểu Bạn -->
             <div class="timeline-item">
               <div class="timeline-content glass-panel">
                 <h4 style="color: var(--text-light); text-shadow: none;">Buổi 2: Tớ Hiểu Bạn (Đồng cảm & Mối quan hệ)</h4>
@@ -174,7 +163,6 @@
                 </div>
               </div>
             </div>
-            <!-- Buổi 3: Tớ Tập Nói -->
             <div class="timeline-item">
               <div class="timeline-content glass-panel">
                 <h4 style="color: var(--text-light); text-shadow: none;">Buổi 3: Tớ Tập Nói (Giao tiếp & Hợp tác)</h4>
@@ -188,12 +176,10 @@
           </div>
         </div>
 
-        <!-- Season 2 Content (Khoa Học STEM) -->
         <div id="season-2" class="glass-panel" style="padding: 30px; display: none;">
           <h3 style="color: #570586; margin-bottom: 20px; text-shadow: none;">Mùa 2: Khoa Học Vui (STEM) (2025) - Kiến Tạo Thế Giới</h3>
           <p style="color: rgb(104, 60, 129); margin-bottom: 30px;"> Khi mầm cây đủ lớn, mùa thứ hai cũng bắt đầu - thử thách nhiều hơn, hành động nhiều hơn. Chúng mình cùng các em lắp mô hình, làm mạch điện, thí nghiệm khoa học, biến ý tưởng thành hành động. Dù có lúc thất bại, có lúc tự hào khi thành công. Tất cả đều là trải nghiệm quý giá, dạy Nhím chúng mình cách kiên nhẫn, sáng tạo và dám thử. Mùa 2 là nơi biến suy nghĩ thành hành động, biến mơ ước thành thứ nhìn thấy được.</p>
           <div class="card-grid">
-            <!-- Ngày 1: Hóa Học -->
             <div class="lesson-card">
               <div style="height: 150px; background: #FCE4EC; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🧪</div>
               <h4 style="color: var(--secondary);">Ngày 1 (21/07/2025): Hóa Học</h4> <br>
@@ -205,7 +191,6 @@
                   <p>3. Núi lửa phun trào: Phản ứng Giấm (Acid) + Baking Soda (Base) tạo CO₂.</p>
               </div>
             </div>
-            <!-- Ngày 2: Vật Lý -->
             <div class="lesson-card">
               <div style="height: 150px; background: #E3F2FD; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🚀</div>
               <h4 style="color: var(--primary);">Ngày 2 (22/07/2025): Vật Lý</h4> <br>
@@ -217,7 +202,6 @@
                   <p>3. Trò chơi củng cố: Giúp các em trả lời nhanh câu hỏi gợi ý để củng cố kiến thức vật lý.</p>
               </div>
             </div>
-            <!-- Ngày 3: Sinh Học -->
             <div class="lesson-card">
               <div style="height: 150px; background: #E8F5E9; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🌿</div>
               <h4 style="color: #4CAF50;">Ngày 3 (23/07/2025): Sinh Học</h4> <br>
@@ -234,7 +218,6 @@
       </div>
     </section>
 
-    <!-- 4. ID CARD PAGE (THẺ CĂN CƯỚC) -->
     <section id="id-view" class="view-section">
       <div class="container" style="max-width: 1300px;">
         <h2 class="heading-gradient-light text-center" style="font-size: 3rem;"> CÔNG DÂN NHÀ NHÍM </h2>
@@ -267,7 +250,6 @@
       </div>
     </section>
 
-    <!-- 5. PROFILE PAGE (GÓC CÁ NHÂN) -->
     <section id="profile-view" class="view-section">
       <div class="container">
         <h2 class="heading-gradient-light text-center mb-40" style="font-size: 3rem;">CĂN PHÒNG CỦA BẠN</h2>
@@ -281,7 +263,6 @@
         </div>
 
         <div class="profile-layout">
-          <!-- Sidebar -->
           <div class="glass-panel" style="padding: 20px; height: fit-content;">
             <div class="sidebar-menu">
               <button class="menu-btn active" onclick="showTab('tab-tkb', this)"><i class="fa fa-calendar-alt"></i> Thời Khóa Biểu</button>
@@ -290,10 +271,8 @@
             </div>
           </div>
 
-          <!-- Content Area -->
           <div class="glass-panel" style="padding: 30px; min-height: 500px;">
             
-            <!-- Tab: Timetable (now editable) -->
             <div id="tab-tkb" class="profile-tab">
               <h3 style="color: var(--text-dark);">Thời Khóa Biểu</h3>
               <p style="color: black; margin-bottom: 20px;">Lên kế hoạch cho một tuần năng suất nhé!</p>
@@ -318,7 +297,6 @@
               </div>
             </div>
 
-            <!-- Tab: Wellness -->
             <div id="tab-well" class="profile-tab" style="display: none;">
               <h3 style="color: var(--text-dark);">Góc Sức Khỏe</h3> <br>
               <div class="wellness-grid">
@@ -342,7 +320,6 @@
               </div>
             </div>
 
-            <!-- Tab: Fortune -->
             <div id="tab-fun" class="profile-tab" style="display: none;">
               <h3 style="color: var(--text-dark);"><i class="fa-solid fa-wand-magic-sparkles"></i> Bói Quẻ Vui Vẻ</h3>
               <div style="text-align: center; margin-top: 40px;">
@@ -358,7 +335,6 @@
       </div>
     </section>
 
-    <!-- 5. TEAM PAGE -->
     <section id="team-view" class="view-section">
       <div class="container">
         <h2 class="heading-gradient-light text-center" style="font-size: 3rem;"> GIA ĐÌNH NHÀ NHÍM </h2>
@@ -376,7 +352,6 @@
         </div>
         <h3 style="margin-top: 30px; border-bottom: 2px solid var(--primary);">Ban Điều Hành & Cố Vấn</h3>
         <div class="team-grid">
-          <!-- BĐH Chính (Mùa 1) -->
           <div class="member-card glass-panel">
             <div class="member-avatar" style="background: #FF6B6B;"><i class="fa-solid fa-crown"></i></div>
             <h4>Bảo Hân (TL)</h4>
@@ -401,7 +376,6 @@
             <p style="color: var(--primary);">PR Leader</p>
           </div>
 
-          <!-- Cố vấn/BĐH Mùa 2 -->
           <div class="member-card glass-panel">
             <div class="member-avatar" style="background: #6C63FF;"><i class="fa-solid fa-glasses"></i></div>
             <h4>Nhật Ánh Du</h4>
@@ -427,7 +401,6 @@
       </div>
     </section>
 
-    <!-- 6. CONTACT PAGE -->
     <section id="contact-view" class="view-section">
       <h2 class="heading-gradient-light text-center" style="font-size: 3rem;"> HỘP THƯ YÊU THƯƠNG </h2>
         <p style="text-align: center; color: #ffffff;"> Nơi đây, nơi mọi hành động thành một nhịp kết nối giữa bạn, Nhím và cộng đồng. </p> <br>
@@ -460,13 +433,11 @@
 
   </main>
 
-  <!-- Global Footer -->
   <footer style="padding: 20px; text-align: center; color: #ffffff; border-top: 1px solid rgba(0,0,0,0.1);">
     <p>Dự án Nhím Tập Gieo - LSTS ACES Project | Email: 1906048@lsts.edu.vn</p>
     <p style="font-size: 0.8rem; margin-top: 5px;">Mọi hình ảnh/nội dung đều thuộc quyền sở hữu và đã được xác nhận bởi Ban Điều Hành Dự Án.</p>
   </footer>
 
-  <!-- Project Contact Footer -->
   <footer style="background: rgba(108, 99, 255, 0.08); padding: 30px; text-align: center; border-top: 2px solid var(--primary);">
     <h3 style="color: #ffffff; margin-bottom: 15px; text-shadow: none;">Liên Hệ Dự Án</h3>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
@@ -489,10 +460,8 @@
     <p style="font-size: 0.75rem; margin-top: 15px; color: var(--text-light);">© 2024-2025 Nhím Tập Gieo. All rights reserved.</p>
   </footer>
 
-  <!-- External JavaScript Link -->
   <script src="script.js"></script>
 
-  <!-- Timetable Edit Script -->
   <script>
     let isEditingTimetable = false;
 
