@@ -1,448 +1,557 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nhím Tập Gieo | The Purple House</title>
-  
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Nhím Tập Gieo | The Purple House</title>
   <!-- External CSS and Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+ <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="styles.css">
+
 
 </head>
 <body>
 
-  <!-- Background Particles -->
-  <div class="particles" id="particles"></div>
 
-  <!-- NAVIGATION (Hidden on Landing) -->
-  <nav class="nav-wrapper" id="navbar" style="display: none;">
-    <div class="brand-logo" onclick="goHome()">
-      <i class="fa-solid fa-house-chimney-crack"></i> NHÍM TẬP GIEO
-    </div>
-    <div class="nav-links">
-      <a href="#" onclick="navigate('hub-view', this)" class="nav-item active">Nhà Chung</a>
-      <a href="#" onclick="navigate('season-view', this)" class="nav-item">Góc chuyện Nhím</a>
-      <a href="#" onclick="navigate('profile-view', this)" class="nav-item">Góc Tinh thần</a>
-      <a href="#" onclick="navigate('team-view', this)" class="nav-item">Gia Đình</a>
-      <a href="#" onclick="navigate('contact-view', this)" class="nav-item">Hộp Thư</a>
-    </div>
-  </nav>
+ <!-- Background Particles -->
+ <div class="particles" id="particles"></div>
 
-  <main>
-    <!-- 1. LANDING PAGE (GÕ CỬA) -->
-    <section id="landing-view" class="view-section" style="display: flex;">
-      <div class="glass-panel" style="padding: 60px; text-align: center; max-width: 600px;">
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px; background: -webkit-linear-gradient(45deg, #6C63FF, #FF6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NHÍM TẬP GIEO</h1>
-        <p style="font-size: 1.2rem; margin-bottom: 40px; color: var(--text-light);"><b>"Gõ nhẹ để bước vào thế giới bình yên của Nhím"</b></p>
-        
-        <div class="door-knocker" onclick="enterHouse()">
-          <i class="fa-solid fa-hand-sparkles"></i>
-        </div>
-        <p class="handwriting" style="margin-top: 20px; font-size: 1.5rem; color: var(--primary);">Gõ Cửa</p>
-      </div>
-    </section>
 
-    <!-- 2. HUB PAGE (NHÀ CHUNG) -->
-    <section id="hub-view" class="view-section">
-      <div class="container">
-        <div class="hub-header">
-          <div class="nhim-assistant">
-            <div style="font-size: 80px; animation: bounce 2s infinite;">🦔</div>
-            <div class="bubble" id="nhim-msg">
-                Chào bạn! Chúng ta là dự án "Nhím Tập Gieo" - nơi gieo mầm Kỹ năng xã hội và tri thức STEM cho trẻ em. Rất vui được đón bạn về nhà.
-            </div>
-          </div>
-        </div>
+ <!-- NAVIGATION (Hidden on Landing) -->
+ <nav class="nav-wrapper" id="navbar" style="display: none;">
+   <div class="brand-logo" onclick="goHome()">
+     <img src="images/logo.png" alt="Logo" />
+     NHÍM TẬP GIEO
+   </div>
+   <div class="nav-links">
+     <a href="#" onclick="navigate('hub-view', this)" class="nav-item active">Nhà Chung</a>
+     <a href="#" onclick="navigate('season-view', this)" class="nav-item">Góc chuyện Nhím</a>
+     <a href="#" onclick="navigate('id-view', this)" class="nav-item">Thẻ Căn Cước</a>
+     <a href="#" onclick="navigate('profile-view', this)" class="nav-item">Góc Tinh thần</a>
+     <a href="#" onclick="navigate('team-view', this)" class="nav-item">Gia Đình</a>
+     <a href="#" onclick="navigate('contact-view', this)" class="nav-item">Hộp Thư</a>
+   </div>
+ </nav>
 
-        <h2 style="text-align: center; margin-bottom: 30px;">Tầm Nhìn & Sứ Mệnh</h2>
-        <div class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
-            <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 600;">
-                <i class="fa-solid fa-seedling" style="color: var(--secondary); margin-right: 10px;"></i> 
-                Lấy triết lý <span style="color: var(--secondary);">“Xây dựng kỹ năng – Phát triển kiến thức”</span> làm kim chỉ nam. Dự án hướng đến việc khơi mở niềm yêu thích khoa học từ những điều gần gũi, giúp trẻ nhận ra rằng khoa học không khô khan, mà chính là hơi thở của cuộc sống.
-            </p>
-            <p style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
-                <span style="font-weight: 700;">Tầm nhìn cụ thể:</span> Giúp các em không chỉ tiếp cận kiến thức khoa học cơ bản (STEM), mà còn trực tiếp trải nghiệm – thử nghiệm – chế tạo, từ đó hình thành tư duy phản biện, kỹ năng giải quyết vấn đề và tình yêu với việc khám phá.
-            </p>
-        </div>
 
-        <div class="hub-grid">
-          <div class="glass-panel hub-card" onclick="navigate('season-view', this)">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <h3>Hành Trình</h3>
-            <p>Khám phá Mùa 1 (Kỹ năng) & Mùa 2 (STEM)</p>
-          </div>
-          <div class="glass-panel hub-card" onclick="navigate('profile-view', this)">
-            <i class="fa-solid fa-mug-hot"></i>
-            <h3>Góc Cá Nhân</h3>
-            <p>Thư giãn, TKB, Uống nước & Bói vui</p>
-          </div>
-          <div class="glass-panel hub-card" onclick="navigate('team-view', this)">
-            <i class="fa-solid fa-people-roof"></i>
-            <h3>Đội Ngũ</h3>
-            <p>Gặp gỡ các thành viên Nhà Nhím</p>
-          </div>
-          <div class="glass-panel hub-card" onclick="navigate('contact-view', this)">
-            <i class="fa-solid fa-paper-plane"></i>
-            <h3>Hộp Thư</h3>
-            <p>Gửi những lời nhắn yêu thương</p>
-          </div>
-        </div>
-      </div>
-    </section>
+ <main>
+   <!-- 1. LANDING PAGE (GÕ CỬA) -->
+   <section id="landing-view" class="view-section" style="display: flex;">
+     <div class="glass-panel" style="padding: 40px; text-align: center; max-width: 580px;">
+       <img src="images/logo.png" alt="Logo" style="height: 120px; width: auto; margin-bottom: 30px; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.2);" />
+       <h1 style="font-size: 3rem; margin-bottom: 10px; background: -webkit-linear-gradient(45deg, #6C63FF, #FF6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">NHÍM TẬP GIEO</h1>
+       <p style="font-size: 1rem; margin-bottom: 40px; color:#570586;">"Trước một cánh cửa nhỏ, có tia nắng vàng khe khẽ lọt qua, một chút tò mò và thân thuộc."</p>
+      
+       <div class="door-knocker" onclick="enterHouse()">
+         <i class="fa-solid fa-hand-sparkles"></i>
+       </div>
+       <p class="handwriting" style="margin-top: 20px; font-size: 1.5rem; color: var(--primary);">Gõ Cửa</p>
+     </div>
+   </section>
 
-    <!-- 3. SEASON PAGE (HÀNH TRÌNH) -->
-    <section id="season-view" class="view-section">
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 30px;">Hành Trình Của Chúng Ta</h2>
-        <div style="text-align: center; margin-bottom: 20px;">
-          <button class="btn-modern" onclick="toggleSeason('s1', this)"><i class="fa-solid fa-heart"></i> Mùa 1: Kỹ Năng</button>
-          <button class="btn-modern btn-outline" onclick="toggleSeason('s2', this)" style="margin-left: 10px;"><i class="fa-solid fa-flask"></i> Mùa 2: STEM</button>
-        </div>
 
-        <!-- Image gallery (loads images from the `images/` folder) -->
-        <div class="season-gallery glass-panel" style="padding: 18px; margin-bottom: 30px;">
-          <h4 style="text-align:center; margin-bottom: 12px; color: var(--primary-dark);">Bộ sưu tập ảnh</h4>
-          <div class="gallery-grid">
-            <img src="images/img-01.jpg" alt="img-01">
-            <img src="images/img-02.jpg" alt="img-02">
-            <img src="images/img-03.png" alt="img-03">
-            <img src="images/img-04.jpg" alt="img-04">
-            <img src="images/img-05.jpg" alt="img-05">
-            <img src="images/img-06.png" alt="img-06">
-            <img src="images/img-07.png" alt="img-07">
-            <img src="images/img-08.jpg" alt="img-08">
-            <img src="images/img-09.jpg" alt="img-09">
-            <img src="images/img-10.jpg" alt="img-10">
-            <img src="images/img-11.jpg" alt="img-11">
-            <img src="images/img-12.jpg" alt="img-12">
-            <img src="images/img-13.jpg" alt="img-13">
-            <img src="images/img-14.jpg" alt="img-14">
-            <img src="images/img-15.jpg" alt="img-15">
-            <img src="images/img-16.png" alt="img-16">
-          </div>
-        </div>
+   <!-- 2. HUB PAGE (NHÀ CHUNG) -->
+   <section id="hub-view" class="view-section">
+     <div class="container">
+       <div class="hub-header">
+         <div class="nhim-assistant">
+           <div style="font-size: 80px; animation: bounce 2s infinite;">🦔</div>
+           <div class="bubble" id="nhim-msg">
+               Chào bạn! Chúng ta là dự án "Nhím Tập Gieo" - nơi gieo mầm Kỹ năng xã hội và tri thức STEM cho trẻ em. Rất vui được đón bạn về nhà.
+           </div>
+         </div>
+       </div>
+       <h2 class="heading-gradient-light text-center mb-30" style="font-size: 4rem;">CHÀO MỪNG BẠN ĐẾN NHÀ!</h2>
+       <div class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
+           <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 600;">
+               <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px;"></i>
+               Hiện bạn đứng tại <b>Sảnh chính</b> - trung tâm của ngôi nhà. Từ đây, 5 căn phòng bên như những nhánh ký ức, mỗi nơi chứa một mảnh ghép của Nhím, một dấu chân, một câu chuyện đã được viết bằng cả tâm huyết của chúng tôi.</p>
+           <p style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+       <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px; "></i><span style="font-weight: 700; color: rgb(145, 46, 120); ">   Hãy thong thả dạo quanh bằng cách chạm nhẹ vào cánh cửa bạn muốn. Mỗi lựa chọn là một lát cắt khác nhau của câu chuyện. Biết đâu, bạn sẽ tìm thấy điều gì đó thuộc về mình.</p>
+       </div>
 
-        <!-- Season 1 Content (Kỹ Năng Xã Hội) -->
-        <div id="season-1" class="glass-panel" style="padding: 30px;">
-          <h3 style="color: var(--secondary); margin-bottom: 20px;">Mùa 1: Kỹ Năng Xã Hội (2024) - Xây Dựng Gai Tri Thức</h3>
-          <p style="color: var(--text-light); margin-bottom: 30px;">
-            Mục tiêu: Các em nhỏ được hình dung như những “bé nhím sơ sinh” – lần đầu tiên học cách tự bảo vệ và phát triển bản thân bằng những chiếc “gai” tri thức đầu đời.
-          </p>
-          <div class="timeline">
-            <!-- Buổi 1: Tớ Là Ai? -->
-            <div class="timeline-item">
-              <div class="timeline-content glass-panel">
-                <h4>Buổi 1: Tớ Là Ai? (Nhận diện bản thân & Phòng vệ)</h4>
-                <div class="lesson-detail">
-                    <h5><i class="fa-solid fa-user-shield"></i> Nội dung cốt lõi</h5>
-                    <p><strong>Phòng vệ:</strong> Quy tắc 4 vòng tròn (Gia đình, Người thân, Người quen, Người lạ). Quy tắc 5 ngón tay (Ôm hôn, Nắm tay, Bắt tay, Vẫy tay, Xua tay).</p>
-                    <p><strong>Khám phá:</strong> Sử dụng mô hình SWOT để các em tự đánh giá điểm mạnh/yếu, nhận biết thế mạnh của mình.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Buổi 2: Tớ Hiểu Bạn -->
-            <div class="timeline-item">
-              <div class="timeline-content glass-panel">
-                <h4>Buổi 2: Tớ Hiểu Bạn (Đồng cảm & Mối quan hệ)</h4>
-                <div class="lesson-detail">
-                    <h5><i class="fa-solid fa-hand-holding-heart"></i> Hoạt động chính</h5>
-                    <p><strong>Đồng cảm:</strong> Yêu thương động vật (Trò chơi "Con thỏ ăn cỏ"). Đồng cảm với Thiên nhiên (Phân loại rác phiên bản "Nhảy lò cò").</p>
-                    <p><strong>Lắng nghe:</strong> Trò chơi "Đọc vị cảm xúc" (Giao tiếp phi ngôn ngữ). Kỹ năng Lắng nghe tích cực để xây dựng mối quan hệ tốt.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Buổi 3: Tớ Tập Nói -->
-            <div class="timeline-item">
-              <div class="timeline-content glass-panel">
-                <h4>Buổi 3: Tớ Tập Nói (Giao tiếp & Hợp tác)</h4>
-                <div class="lesson-detail">
-                    <h5><i class="fa-solid fa-comments"></i> Kỹ năng giao tiếp & Hợp tác</h5>
-                    <p><strong>Giao tiếp:</strong> Quy tắc Thinking - Speaking - Doing. Xử lý tình huống (Bị bắt nạt, Người lạ rủ đi).</p>
-                    <p><strong>Hợp tác:</strong> Trò chơi "Tòa nhà cao nhất". Hoạt động củng cố: "Làm thiệp tặng Secret Santa" để thực hiện hóa các yếu tố tạo nên MQH lành mạnh.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Season 2 Content (Khoa Học STEM) -->
-        <div id="season-2" class="glass-panel" style="padding: 30px; display: none;">
-          <h3 style="color: var(--primary); margin-bottom: 20px; text-align: center;">Mùa 2: Khoa Học Vui (STEM) (2025) - Kiến Tạo Thế Giới</h3>
-          <p style="color: var(--text-light); margin-bottom: 30px; text-align: center;">
-            Mùa thứ hai đánh dấu bước trưởng thành: "bé nhím" học cách bảo vệ bản thân và kiến tạo thế giới xung quanh bằng tri thức khoa học. Dự án ưu tiên Học qua làm (Learning by Doing) và Tư duy phản biện.
-          </p>
-          <div class="card-grid">;fnkg /,;lgl
-            <!-- Ngày 1: Hóa Học -->
-            <div class="lesson-card">
-              <div style="height: 150px; background: #FCE4EC; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🧪</div>
-              <h4 style="color: var(--secondary);">Ngày 1 (21/07/2025): Hóa Học</h4>
-              <p><strong>Chủ đề:</strong> Phản Ứng Màu Sắc & Sủi Bọt.</p>
-              <div class="lesson-detail">
-                  <h5><i class="fa-solid fa-flask"></i> Chi tiết thí nghiệm</h5>
-                  <p>1. **Kem đánh răng con voi:** Giới thiệu phản ứng hóa học (Oxy già + Men nở). Thực hành dưới sự giám sát chặt chẽ.</p>
-                  <p>2. **Đèn Lava:** Giới thiệu phản ứng hóa học (Dầu nhẹ hơn nước, CO₂ đẩy nước màu lên).</p>
-                  <p>3. **Núi lửa phun trào:** Phản ứng Giấm (Acid) + Baking Soda (Base) tạo CO₂.</p>
-              </div>
-            </div>
-            <!-- Ngày 2: Vật Lý -->
-            <div class="lesson-card">
-              <div style="height: 150px; background: #E3F2FD; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🚀</div>
-              <h4 style="color: var(--primary);">Ngày 2 (22/07/2025): Vật Lý</h4>
-              <p><strong>Chủ đề:</strong> Định luật Newton & Chuyển Động.</p>
-              <div class="lesson-detail">
-                  <h5><i class="fa-solid fa-wrench"></i> Hoạt động Chế tạo</h5>
-                  <p>1. **Tên lửa nước:** Chế tạo và phóng tên lửa (Áp dụng Định luật 3 Newton - Phản lực). [Image of Water rocket launching]</p>
-                  <p>2. **Xe bong bóng:** Chế tạo mô hình xe chạy bằng năng lượng khí nén (Thế năng đàn hồi).</p>
-                  <p>3. **Trò chơi củng cố:** Giúp các em trả lời nhanh câu hỏi gợi ý để củng cố kiến thức vật lý.</p>
-              </div>
-            </div>
-            <!-- Ngày 3: Sinh Học -->
-            <div class="lesson-card">
-              <div style="height: 150px; background: #E8F5E9; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🌿</div>
-              <h4 style="color: #4CAF50;">Ngày 3 (23/07/2025): Sinh Học</h4>
-              <p><strong>Chủ đề:</strong> Sự Sống Quanh Ta & Cơ Chế Cây Xanh.</p>
-              <div class="lesson-detail">
-                  <h5><i class="fa-solid fa-leaf"></i> Chi tiết thí nghiệm</h5>
-                  <p>1. **Cây có thở không?** (Thí nghiệm quang hợp): Cho lá rong đuôi chó vào ống nghiệm chứa nước, phơi nắng. Quan sát bọt khí O₂ nổi lên. </p>
-                  <p>2. **Hoa Đua Sắc** (Mao dẫn): Bỏ hoa hồng trắng vào ống chứa màu thực phẩm. Chứng minh sự vận chuyển nước từ rễ lên lá thông qua mạch gỗ.</p>
-                  <p>3. **Trò chơi củng cố:** Trò chơi ghép hình để hiểu về công thức Quang hợp.</p>
-              </div>
-            </div>
-          </div>
+       <div class="hub-grid">
+         <div class="glass-panel hub-card" onclick="navigate('id-view', this)">
+           <i class="fa-solid fa-id-card"></i>
+           <h3>Thẻ Căn Cước</h3>
+           <p>Thông tin công dân</p>
+         </div>
+         <div class="glass-panel hub-card" onclick="navigate('season-view', this)">
+           <i class="fa-solid fa-map-location-dot"></i>
+           <h3>Hành Trình</h3>
+           <p>Khám phá Mùa 1 & 2</p>
+         </div>
+         <div class="glass-panel hub-card" onclick="navigate('profile-view', this)">
+           <i class="fa-solid fa-mug-hot"></i>
+           <h3>Góc Cá Nhân</h3>
+           <p>Thư giãn & Bí mật</p>
+         </div>
+         <div class="glass-panel hub-card" onclick="navigate('team-view', this)">
+           <i class="fa-solid fa-people-roof"></i>
+           <h3>Đội Ngũ</h3>
+           <p>Gia đình Nhà Nhím</p>
+         </div>
+         <div class="glass-panel hub-card" onclick="navigate('contact-view', this)">
+           <i class="fa-solid fa-paper-plane"></i>
+           <h3>Hộp Thư</h3>
+           <p>Gửi lời nhắn yêu</p>
+         </div>
+       </div>
 
-          <h4 style="margin-top: 30px; text-align: center;">Kế hoạch Hậu cần & Vật tư Mùa 2 (Làng May Mắn)</h4>
-          <div class="glass-panel" style="padding: 20px; background: rgba(255, 213, 61, 0.2); margin-top: 15px;">
-              <p style="font-size: 0.95rem; font-weight: 700; color: var(--primary-dark);">
-                <i class="fa-solid fa-calendar-check" style="color: var(--accent); margin-right: 10px;"></i>
-                Lịch trình chuẩn bị chi tiết (15/07 - 17/07)
-              </p>
-              <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; font-size: 0.9rem;">
-                  <li>**15/07:** Team 1 (Nhựt Tín, Sơn, Quỳnh Anh) & Team 2 (Hoàng Minh, Tiến, Bảo Hân) hoàn thành 2 ideas trò chơi và 2 ideas backup.</li>
-                  <li>**16/07:** Chốt danh sách vật liệu cuối cùng và họp để sửa/chốt giáo án.</li>
-                  <li>**17/07:** Lên lịch chuẩn bị vật tư và **Demo** thử nghiệm toàn bộ giáo án.</li>
-              </ul>
-              <p style="font-size: 0.95rem; margin-top: 10px;">
-                <i class="fa-solid fa-boxes-packing" style="color: var(--accent); margin-right: 10px;"></i>
-                **Quy trình Set-up tại Mái ấm:** Phân loại đồ vào 4 thùng (D1, D2, D3, D4) tương ứng với các ngày/buổi dạy. Nhóm Hậu cần phụ trách kiểm tra đồ đạc và xuất phát lúc 8H sáng 21/07.
-              </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- 4. PROFILE PAGE (GÓC CÁ NHÂN) -->
-    <section id="profile-view" class="view-section">
-      <div class="container">
-        <h2 style="text-align: center; margin-bottom: 40px;">Căn Phòng Của Bạn</h2>
-        
-        <div class="profile-layout">
-          <!-- Sidebar -->
-          <div class="glass-panel" style="padding: 20px; height: fit-content;">
-            <div class="sidebar-menu">
-              <button class="menu-btn active" onclick="showTab('tab-id', this)"><i class="fa fa-id-card"></i> Thẻ Căn Cước</button>
-              <button class="menu-btn" onclick="showTab('tab-tkb', this)"><i class="fa fa-calendar-alt"></i> Thời Khóa Biểu</button>
-              <button class="menu-btn" onclick="showTab('tab-well', this)"><i class="fa fa-heart-pulse"></i> Sức Khỏe & Thư Giãn</button>
-              <button class="menu-btn" onclick="showTab('tab-fun', this)"><i class="fa fa-magic"></i> Bói Quẻ Vui</button>
-            </div>
-          </div>
+      
+       <!-- Certificate (added to Hub) -->
+       <div class="glass-panel hub-certificate" style="padding: 20px; margin-top: 30px; text-align: center;">
+         <div style="display:flex; justify-content:center;">
+           <img src="images/Certificate.png" alt="Chứng nhận" style="max-width:720px; width:90%; height:auto; border-radius:12px; box-shadow: 0 12px 30px rgba(0,0,0,0.2); border: 6px solid white;" />
+         </div>
+       </div>
+       <br>
+       <br>
+       <h4 style="text-align:center; margin-bottom: 24px; color: white; font-size: 2rem; ">TẦM NHÌN VÀ SỨ MỆNH</h4>
+       <div class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
+           <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 600;">
+               <i class="fa-solid fa-seedling" style="color: var(--secondary); margin-right: 10px;"></i>
+               Lấy triết lý <span style="color: var(--secondary);">“Xây dựng kỹ năng – Phát triển kiến thức”</span> làm kim chỉ nam. Dự án hướng đến việc khơi mở niềm yêu thích khoa học từ những điều gần gũi, giúp trẻ nhận ra rằng khoa học không khô khan, mà chính là hơi thở của cuộc sống.
+           </p>
+           <p style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+               <span style="font-weight: 700;">Tầm nhìn cụ thể:</span> Giúp các em không chỉ tiếp cận kiến thức khoa học cơ bản (STEM), mà còn trực tiếp trải nghiệm – thử nghiệm – chế tạo, từ đó hình thành tư duy phản biện, kỹ năng giải quyết vấn đề và tình yêu với việc khám phá.
+           </p>
+       </div>
+       <!-- Hub gallery (moved images from season) -->
+       <div class="season-gallery hub-gallery" style="padding: 20px; margin-top: 0px;">
+         <div class="gallery-grid hub-gallery-grid">
+           <figure class="hub-photo"><img src="images/img-01.jpg" alt="img-01"><figcaption>Ảnh 01 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-02.jpg" alt="img-02"><figcaption>Ảnh 02 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-03.png" alt="img-03"><figcaption>Ảnh 03 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-04.jpg" alt="img-04"><figcaption>Ảnh 04 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-05.jpg" alt="img-05"><figcaption>Ảnh 05 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-06.png" alt="img-06"><figcaption>Ảnh 06 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-07.png" alt="img-07"><figcaption>Ảnh 07 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-08.jpg" alt="img-08"><figcaption>Ảnh 08 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-09.jpg" alt="img-09"><figcaption>Ảnh 09 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-10.jpg" alt="img-10"><figcaption>Ảnh 10 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-11.jpg" alt="img-11"><figcaption>Ảnh 11 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-12.jpg" alt="img-12"><figcaption>Ảnh 12 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-13.jpg" alt="img-13"><figcaption>Ảnh 13 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-14.jpg" alt="img-14"><figcaption>Ảnh 14 - Mô tả</figcaption></figure>
+           <figure class="hub-photo"><img src="images/img-16.png" alt="img-16"><figcaption>Ảnh 16 - Mô tả</figcaption></figure>
+         </div>
+       </div>
+     </div>
+   </section>
 
-          <!-- Content Area -->
-          <div class="glass-panel" style="padding: 30px; min-height: 500px;">
-            
-            <!-- Tab: ID Card -->
-            <div id="tab-id" class="profile-tab">
-              <h3>Thông Tin Công Dân Nhà Nhím</h3>
-              <div class="id-card-wrapper" id="idCard">
-                <div class="id-card">
-                  <div style="display: flex; justify-content: space-between; align-items: start;">
-                    <div class="avatar-circle"><i class="fa-solid fa-user-astronaut"></i></div>
-                    <img src="https://img.icons8.com/color/48/000000/chip-card.png" alt="chip" width="40">
-                  </div>
-                  <h2 style="color: white; font-size: 1.5rem; margin-bottom: 5px;" id="display-name">Nhím Ngủ Ngày</h2>
-                  <p style="opacity: 0.8; font-size: 0.9rem;">ID: NHIM-2024-001</p>
-                  <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                    <div>
-                      <small style="color: var(--accent);">NICKNAME</small><br>
-                      <span id="display-nick">Hedgehog A</span>
-                    </div>
-                    <div>
-                      <small style="color: var(--accent);">SỞ THÍCH</small><br>
-                      <span>Ngủ, Code, Ăn</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div style="text-align: center; margin-top: 20px;">
-                <button class="btn-modern btn-outline" onclick="editProfile()">Chỉnh sửa thông tin</button>
-              </div>
-            </div>
 
-            <!-- Tab: Timetable -->
-            <div id="tab-tkb" class="profile-tab" style="display: none;">
-              <h3>Thời Khóa Biểu</h3>
-              <p style="color: var(--text-light); margin-bottom: 20px;">Lên kế hoạch cho một tuần năng suất nhé!</p>
-              <div style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse;">
-                  <tr style="background: rgba(108, 99, 255, 0.1);">
-                    <th style="padding: 15px;">Giờ</th>
-                    <th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th><th>CN</th>
-                  </tr>
-                  <tr>
-                    <td style="padding: 15px; font-weight: bold;">Sáng</td>
-                    <td>Toán</td><td>Văn</td><td>Anh</td><td>Lý</td><td>Hóa</td><td>Ngủ</td><td>Yoga</td>
-                  </tr>
-                  <tr>
-                    <td style="padding: 15px; font-weight: bold;">Chiều</td>
-                    <td>Code</td><td>Nhạc</td><td>Vẽ</td><td>Bơi</td><td>Code</td><td>Chơi</td><td>Phim</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
+   <!-- 3. SEASON PAGE (HÀNH TRÌNH) -->
+   <section id="season-view" class="view-section">
+     <div class="container">
+       <h2 class="heading-gradient-light text-center mb-30" style="font-size: 3rem;">HÀNH TRÌNH CỦA CHÚNG TA</h2>
+       <div style="text-align: center; margin-bottom: 20px;">
+         <button class="btn-modern" onclick="toggleSeason('s1', this)"><i class="fa-solid fa-heart"></i> Mùa 1: Kỹ Năng</button>
+         <button class="btn-modern btn-outline" onclick="toggleSeason('s2', this)" style="margin-left: 10px;"><i class="fa-solid fa-flask"></i> Mùa 2: STEM</button>
+       </div>
 
-            <!-- Tab: Wellness -->
-            <div id="tab-well" class="profile-tab" style="display: none;">
-              <h3>Góc Sức Khỏe</h3>
-              <div class="wellness-grid">
-                <div class="glass-panel water-tracker" style="padding: 20px; background: rgba(52, 152, 219, 0.1);">
-                  <h4><i class="fa-solid fa-droplet" style="color: #3498db;"></i> Uống Nước</h4>
-                  <div class="water-level" id="water-count">0 ml</div>
-                  <p>Mục tiêu: 2000ml</p>
-                  <div style="margin-top: 15px;">
-                    <button class="btn-modern" style="background: #3498db; padding: 8px 15px;" onclick="addWater(250)">+250ml</button>
-                    <button class="btn-modern" style="background: #2980b9; padding: 8px 15px;" onclick="addWater(500)">+500ml</button>
-                  </div>
-                </div>
 
-                <div class="glass-panel" style="padding: 20px; text-align: center; background: rgba(108, 99, 255, 0.1);">
-                  <h4><i class="fa-solid fa-lungs"></i> Hít Thở (4-7-8)</h4>
-                  <div class="breathing-ring" id="breathe-circle">
-                    <span class="breathing-text" id="breathe-text">Sẵn sàng?</span>
-                  </div>
-                  <button class="btn-modern" id="btn-breathe" onclick="toggleBreathing()">Bắt đầu</button>
-                </div>
-              </div>
-            </div>
+       <!-- Season 1 Content (Kỹ Năng Xã Hội) -->
+       <div id="season-1" class="glass-panel" style="padding: 30px;">
+         <h3 style="color: #570586; margin-bottom: 20px; text-shadow: none;">Mùa 1: Kỹ Năng Xã Hội (2024) - Xây Dựng Gai Tri Thức</h3>
+         <p style="color: rgb(104, 60, 129); margin-bottom: 30px;"> Đây là mùa đầu tiên, khi Nhím bắt đầu hành trình gieo tri thức. Chúng mình đã học được cách giao tiếp, lắng nghe nhau, làm việc nhóm, và dám nói lên tiếng nói của mình. Đôi lúc, có bỡ ngỡ, có vụng về, nhưng từng bước một, dần tự tin hơn, mở lòng hơn. Có thể nói Mùa 1 là nền tảng, giúp học cách đứng vững, hiểu bản thân muốn gì và người khác cần gì, trước khi tạo ra giá trị cho cộng đồng.
+         </p>
+         <div class="timeline">
+           <!-- Buổi 1: Tớ Là Ai? -->
+           <div class="timeline-item">
+             <div class="timeline-content glass-panel">
+               <h4 style="color: var(--text-light); text-shadow: none;">Buổi 1: Tớ Là Ai? (Nhận diện bản thân & Phòng vệ)</h4>
+               <div class="lesson-detail">
+                   <h5><i class="fa-solid fa-user-shield"></i> Nội dung cốt lõi</h5>
+                   <p><strong>Phòng vệ:</strong> Quy tắc 4 vòng tròn (Gia đình, Người thân, Người quen, Người lạ). Quy tắc 5 ngón tay (Ôm hôn, Nắm tay, Bắt tay, Vẫy tay, Xua tay).</p>
+                   <p><strong>Khám phá:</strong> Sử dụng mô hình SWOT để các em tự đánh giá điểm mạnh/yếu, nhận biết thế mạnh của mình.</p>
+               </div>
+             </div>
+           </div>
+           <!-- Buổi 2: Tớ Hiểu Bạn -->
+           <div class="timeline-item">
+             <div class="timeline-content glass-panel">
+               <h4 style="color: var(--text-light); text-shadow: none;">Buổi 2: Tớ Hiểu Bạn (Đồng cảm & Mối quan hệ)</h4>
+               <div class="lesson-detail">
+                   <h5><i class="fa-solid fa-hand-holding-heart"></i> Hoạt động chính</h5>
+                   <p><strong>Đồng cảm:</strong> Yêu thương động vật (Trò chơi "Con thỏ ăn cỏ"). Đồng cảm với Thiên nhiên (Phân loại rác phiên bản "Nhảy lò cò").</p>
+                   <p><strong>Lắng nghe:</strong> Trò chơi "Đọc vị cảm xúc" (Giao tiếp phi ngôn ngữ). Kỹ năng Lắng nghe tích cực để xây dựng mối quan hệ tốt.</p>
+               </div>
+             </div>
+           </div>
+           <!-- Buổi 3: Tớ Tập Nói -->
+           <div class="timeline-item">
+             <div class="timeline-content glass-panel">
+               <h4 style="color: var(--text-light); text-shadow: none;">Buổi 3: Tớ Tập Nói (Giao tiếp & Hợp tác)</h4>
+               <div class="lesson-detail">
+                   <h5><i class="fa-solid fa-comments"></i> Kỹ năng giao tiếp & Hợp tác</h5>
+                   <p><strong>Giao tiếp:</strong> Quy tắc Thinking - Speaking - Doing. Xử lý tình huống (Bị bắt nạt, Người lạ rủ đi).</p>
+                   <p><strong>Hợp tác:</strong> Trò chơi "Tòa nhà cao nhất". Hoạt động củng cố: "Làm thiệp tặng Secret Santa" để thực hiện hóa các yếu tố tạo nên MQH lành mạnh.</p>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
 
-            <!-- Tab: Fortune -->
-            <div id="tab-fun" class="profile-tab" style="display: none;">
-              <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Bói Quẻ Vui Vẻ</h3>
-              <div style="text-align: center; margin-top: 40px;">
-                <div id="fortune-card" style="font-size: 1.5rem; font-family: 'Patrick Hand'; min-height: 100px; color: var(--primary-dark);">
-                  Nhấn nút bên dưới để nhận nhiệm vụ bí mật hôm nay!
-                </div>
-                <button class="btn-modern" onclick="getFortune()" style="background: var(--accent); color: var(--text-dark);">✨ Rút Quẻ ✨</button>
-              </div>
-            </div>
 
-          </div>
-        </div>
-      </div>
-    </section>
+       <!-- Season 2 Content (Khoa Học STEM) -->
+       <div id="season-2" class="glass-panel" style="padding: 30px; display: none;">
+         <h3 style="color: #570586; margin-bottom: 20px; text-shadow: none;">Mùa 2: Khoa Học Vui (STEM) (2025) - Kiến Tạo Thế Giới</h3>
+         <p style="color: rgb(104, 60, 129); margin-bottom: 30px;"> Khi mầm cây đủ lớn, mùa thứ hai cũng bắt đầu - thử thách nhiều hơn, hành động nhiều hơn. Chúng mình cùng các em lắp mô hình, làm mạch điện, thí nghiệm khoa học, biến ý tưởng thành hành động. Dù có lúc thất bại, có lúc tự hào khi thành công. Tất cả đều là trải nghiệm quý giá, dạy Nhím chúng mình cách kiên nhẫn, sáng tạo và dám thử. Mùa 2 là nơi biến suy nghĩ thành hành động, biến mơ ước thành thứ nhìn thấy được.</p>
+         <div class="card-grid">
+           <!-- Ngày 1: Hóa Học -->
+           <div class="lesson-card">
+             <div style="height: 150px; background: #FCE4EC; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🧪</div>
+             <h4 style="color: var(--secondary);">Ngày 1 (21/07/2025): Hóa Học</h4> <br>
+             <p><strong>Chủ đề:</strong> Phản Ứng Màu Sắc & Sủi Bọt.</p>
+             <div class="lesson-detail">
+                 <h5><i class="fa-solid fa-flask"></i> Chi tiết thí nghiệm</h5>
+                 <p>1. Kem đánh răng con voi: Giới thiệu phản ứng hóa học (Oxy già + Men nở). Thực hành dưới sự giám sát chặt chẽ.</p>
+                 <p>2. Đèn Lava: Giới thiệu phản ứng hóa học (Dầu nhẹ hơn nước, CO₂ đẩy nước màu lên).</p>
+                 <p>3. Núi lửa phun trào: Phản ứng Giấm (Acid) + Baking Soda (Base) tạo CO₂.</p>
+             </div>
+           </div>
+           <!-- Ngày 2: Vật Lý -->
+           <div class="lesson-card">
+             <div style="height: 150px; background: #E3F2FD; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🚀</div>
+             <h4 style="color: var(--primary);">Ngày 2 (22/07/2025): Vật Lý</h4> <br>
+             <p><strong>Chủ đề:</strong> Định luật Newton & Chuyển Động.</p>
+             <div class="lesson-detail">
+                 <h5><i class="fa-solid fa-wrench"></i> Hoạt động Chế tạo</h5>
+                 <p>1. Tên lửa nước: Chế tạo và phóng tên lửa (Áp dụng Định luật 3 Newton - Phản lực). [Image of Water rocket launching]</p>
+                 <p>2. Xe bong bóng: Chế tạo mô hình xe chạy bằng năng lượng khí nén (Thế năng đàn hồi).</p>
+                 <p>3. Trò chơi củng cố: Giúp các em trả lời nhanh câu hỏi gợi ý để củng cố kiến thức vật lý.</p>
+             </div>
+           </div>
+           <!-- Ngày 3: Sinh Học -->
+           <div class="lesson-card">
+             <div style="height: 150px; background: #E8F5E9; border-radius: 15px; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; font-size: 50px;">🌿</div>
+             <h4 style="color: #4CAF50;">Ngày 3 (23/07/2025): Sinh Học</h4> <br>
+             <p><strong>Chủ đề:</strong> Sự Sống Quanh Ta & Cơ Chế Cây Xanh.</p>
+             <div class="lesson-detail">
+                 <h5><i class="fa-solid fa-leaf"></i> Chi tiết thí nghiệm</h5>
+                 <p>1. Cây có thở không? (Thí nghiệm quang hợp): Cho lá rong đuôi chó vào ống nghiệm chứa nước, phơi nắng. Quan sát bọt khí O₂ nổi lên. </p>
+                 <p>2. Hoa Đua Sắc (Mao dẫn): Bỏ hoa hồng trắng vào ống chứa màu thực phẩm. Chứng minh sự vận chuyển nước từ rễ lên lá thông qua mạch gỗ.</p>
+                 <p>3. Trò chơi củng cố: Trò chơi ghép hình để hiểu về công thức Quang hợp.</p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
 
-    <!-- 5. TEAM PAGE -->
-    <section id="team-view" class="view-section">
-      <div class="container">
-        <h2 style="text-align: center;">Gia Đình Nhà Nhím</h2>
-        <p style="text-align: center; color: var(--text-light);">
-            Những người gieo mầm hạnh phúc - Tổng cộng **26 thành viên** (Bao gồm BĐH, Chuyên môn, Hậu cần, và Cố vấn).
-        </p>
-        
-        <h3 style="margin-top: 30px; border-bottom: 2px solid var(--primary);">Ban Điều Hành & Cố Vấn</h3>
-        <div class="team-grid">
-          <!-- BĐH Chính (Mùa 1) -->
-          <div class="member-card glass-panel">
-            <div class="member-avatar" style="background: #FF6B6B;"><i class="fa-solid fa-crown"></i></div>
-            <h4>Bảo Hân (TL)</h4>
-            <p style="color: var(--primary);">Team Leader</p>
-          </div>
-          <div class="member-card glass-panel">
-            <div class="member-avatar" style="background: #4ECDC4;"><i class="fa-solid fa-star"></i></div>
-            <h4>Khánh Hà (DL)</h4>
-            <p style="color: var(--primary);">Deputy Leader</p>
-          </div>
-          <div class="member-card glass-panel">
-            <div class="member-avatar" style="background: #FFE66D;"><i class="fa-solid fa-book"></i></div>
-            <h4>Quỳnh Anh (SL)</h4>
-            <p style="color: var(--primary);">Specialist Lead</p>
-          </div>
-          <div class="member-card glass-panel">
-            <div class="member-avatar" style="background: #FF9F43;"><i class="fa-solid fa-bullhorn"></i></div>
-            <h4>Ngọc Linh (PRL)</h4>
-            <p style="color: var(--primary);">PR Leader</p>
-          </div>
-          <!-- Cố vấn/BĐH Mùa 2 -->
-          <div class="member-card glass-panel">
-            <div class="member-avatar" style="background: #6C63FF;"><i class="fa-solid fa-glasses"></i></div>
-            <h4>Nhật Ánh Du</h4>
-            <p style="color: var(--secondary);">Head Mùa 2 / Advisor</p>
-          </div>
-          <div class="member-card glass-panel">
-            <div class="member-avatar" style="background: #B495FF;"><i class="fa-solid fa-shield-halved"></i></div>
-            <h4>Gia Hân</h4>
-            <p style="color: var(--secondary);">Specialist Advisor</p>
-          </div>
-        </div>
-        
-        <h3 style="margin-top: 40px; border-bottom: 2px solid var(--primary);">Nhóm Chuyên Môn & Hậu Cần (Mùa 2)</h3>
-        <div class="team-grid">
-            <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
-                <div class="member-avatar" style="background: #4CAF50;"><i class="fa-solid fa-atom"></i></div>
-                <h4>Lê Bảo Hân</h4><p style="color: var(--text-dark);">Chuyên môn</p>
-            </div>
-            <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
-                <div class="member-avatar" style="background: #2196F3;"><i class="fa-solid fa-pen-nib"></i></div>
-                <h4>Nhật Mai</h4><p style="color: var(--text-dark);">Chuyên môn</p>
-            </div>
-            <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
-                <div class="member-avatar" style="background: #FFC107;"><i class="fa-solid fa-tools"></i></div>
-                <h4>Lê Nhựt Tín</h4><p style="color: var(--text-dark);">Hậu cần</p>
-            </div>
-            <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
-                <div class="member-avatar" style="background: #9C27B0;"><i class="fa-solid fa-truck"></i></div>
-                <h4>Minh Trí</h4><p style="color: var(--text-dark);">Hậu cần</p>
-            </div>
-            <!-- Total count check: 6 BĐH/Cố vấn + 20 thành viên khác = 26 -->
-            <p style="grid-column: 1 / -1; text-align: center; margin-top: 20px; color: var(--text-light);">
-                Và 20 thành viên khác thuộc Ban Chuyên môn, Hậu cần, và PR.
-            </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- 6. CONTACT PAGE -->
-    <section id="contact-view" class="view-section">
-      <div class="container" style="max-width: 700px;">
-        <div class="glass-panel" style="padding: 40px;">
-          <h2 style="text-align: center; margin-bottom: 20px;">Hộp Thư Yêu Thương</h2>
-          <p style="text-align: center; margin-bottom: 30px;">Gửi gắm tâm tư, Nhím sẽ lắng nghe.</p>
+   <!-- 4. ID CARD PAGE (THẺ CĂN CƯỚC) -->
+   <section id="id-view" class="view-section">
+     <div class="container" style="max-width: 1300px;">
+       <h2 class="heading-gradient-light text-center" style="font-size: 3rem;"> CÔNG DÂN NHÀ NHÍM </h2>
+       <p style="text-align: center; color: #ffffff;">
+           Hãy điền thẻ ID card của mình để trở thành một thành viên trong Nhím nhé! </p>
+      
+           <div class="id-card-wrapper" id="idCard">
+         <div class="id-card">
+           <div style="display: flex; justify-content: space-between; align-items: start;">
+             <div class="avatar-circle"><i class="fa-solid fa-user-astronaut"></i></div>
+             <img src="images/logo.png" alt="Logo" width="40">
+           </div>
+           <h2 style="color: white; font-size: 1.5rem; margin-bottom: 5px;" id="display-name">Nhím Ngủ Ngày</h2>
+           <p style="opacity: 0.8; font-size: 0.9rem;">ID: NHIM-2024-001</p>
+           <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+             <div>
+               <small style="color: var(--accent);">NICKNAME</small><br>
+               <span id="display-nick">Hedgehog A</span>
+             </div>
+             <div>
+               <small style="color: var(--accent);">SỞ THÍCH</small><br>
+               <span>Ngủ, Code, Ăn</span>
+             </div>
+           </div>
+         </div>
+       </div>
+       <div style="text-align: center; margin-top: 30px;">
+         <button class="btn-modern btn-outline" onclick="editProfile()">Chỉnh sửa thông tin</button>
+       </div>
+     </div>
+   </section>
+
+
+   <!-- 5. PROFILE PAGE (GÓC CÁ NHÂN) -->
+   <section id="profile-view" class="view-section">
+     <div class="container">
+       <h2 class="heading-gradient-light text-center mb-40" style="font-size: 3rem;">CĂN PHÒNG CỦA BẠN</h2>
+
+
+       <div class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
+           <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 600;">
+               <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px;"></i>
+               Góc tinh thần là ô cửa sổ nhỏ nhìn ra bầu trời, nơi bạn có thể nhắm mắt vài giây, được nhắc nhở uống nước, tập bài thở, hay thực hiện vài thử thách vui nhộn.</p>
+           <p style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+       <i class="fa-solid fa-star" style="color: var(--secondary);margin-right: 10px; "></i><span style="font-weight: 700; color: rgb(145, 46, 120); ">  Đây là nơi dành cho những trái tim đang “mệt”, và cho cả những niềm vui muốn được giữ lại lâu hơn một chút.</p>
+       </div>
+
+
+       <div class="profile-layout">
+         <!-- Sidebar -->
+         <div class="glass-panel" style="padding: 20px; height: fit-content;">
+           <div class="sidebar-menu">
+             <button class="menu-btn active" onclick="showTab('tab-tkb', this)"><i class="fa fa-calendar-alt"></i> Thời Khóa Biểu</button>
+             <button class="menu-btn" onclick="showTab('tab-well', this)"><i class="fa fa-heart-pulse"></i> Sức Khỏe & Thư Giãn</button>
+             <button class="menu-btn" onclick="showTab('tab-fun', this)"><i class="fa fa-magic"></i> Bói Quẻ Vui</button>
+           </div>
+         </div>
+
+
+         <!-- Content Area -->
+         <div class="glass-panel" style="padding: 30px; min-height: 500px;">
           
-          <form onsubmit="event.preventDefault(); alert('Thư đã được gửi đi! Cảm ơn bạn ❤️');">
-            <div style="margin-bottom: 20px;">
-              <label style="font-weight: 600;">Tên của bạn</label>
-              <input type="text" placeholder="Người bạn giấu tên" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-top: 5px;">
-            </div>
-            <div style="margin-bottom: 20px;">
-              <label style="font-weight: 600;">Lời nhắn nhủ</label>
-              <textarea rows="5" placeholder="Hôm nay bạn thế nào..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-top: 5px;"></textarea>
-            </div>
-            <button class="btn-modern" style="width: 100%; justify-content: center;">Gửi Thư <i class="fa-solid fa-paper-plane"></i></button>
-          </form>
-        </div>
-      </div>
-    </section>
+           <!-- Tab: Timetable (now editable) -->
+           <div id="tab-tkb" class="profile-tab">
+             <h3 style="color: var(--text-dark);">Thời Khóa Biểu</h3>
+             <p style="color: black; margin-bottom: 20px;">Lên kế hoạch cho một tuần năng suất nhé!</p>
+             <div style="text-align: right; margin-bottom: 15px;">
+               <button class="btn-modern btn-outline" onclick="toggleEditTimetable()" style="padding: 8px 16px; font-size: 0.9rem;"><i class="fa-solid fa-pencil"></i> Chỉnh Sửa</button>
+             </div>
+             <div style="overflow-x: auto;" id="timetable-container">
+               <table style="width: 100%; border-collapse: collapse;" id="timetable">
+                 <tr style="background: rgba(108, 99, 255, 0.1);">
+                   <th style="padding: 15px;">Giờ</th>
+                   <th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th><th>T7</th><th>CN</th>
+                 </tr>
+                 <tr>
+                   <td style="padding: 15px; font-weight: bold;">Sáng</td>
+                   <td>Toán</td><td>Văn</td><td>Anh</td><td>Lý</td><td>Hóa</td><td>Ngủ</td><td>Yoga</td>
+                 </tr>
+                 <tr>
+                   <td style="padding: 15px; font-weight: bold;">Chiều</td>
+                   <td>Code</td><td>Nhạc</td><td>Vẽ</td><td>Bơi</td><td>Code</td><td>Chơi</td><td>Phim</td>
+                 </tr>
+               </table>
+             </div>
+           </div>
 
-  </main>
 
-  <!-- Global Footer -->
-  <footer style="padding: 20px; text-align: center; color: var(--text-light); border-top: 1px solid rgba(0,0,0,0.1);">
-    <p>Dự án Nhím Tập Gieo - LSTS ACES Project | Email: 1909019@lsts.edu.vn</p>
-    <p style="font-size: 0.8rem; margin-top: 5px;">Mọi hình ảnh/nội dung đều thuộc quyền sở hữu và đã được xác nhận bởi Ban Điều Hành Dự Án.</p>
-  </footer>
+           <!-- Tab: Wellness -->
+           <div id="tab-well" class="profile-tab" style="display: none;">
+             <h3 style="color: var(--text-dark);">Góc Sức Khỏe</h3> <br>
+             <div class="wellness-grid">
+               <div class="glass-panel water-tracker" style="padding: 20px; background: rgba(52, 152, 219, 0.1);">
+                 <h4 style="color: var(--text-dark);"><i class="fa-solid fa-droplet" style="color: #3498db;"></i>Uống Nước</h4>
+                 <div class="water-level" id="water-count">0 ml</div>
+                 <p>Mục tiêu: 2000ml</p>
+                 <div style="margin-top: 15px;">
+                   <button class="btn-modern" style="background: #3498db; padding: 8px 15px;" onclick="addWater(250)">+250ml</button>
+                   <button class="btn-modern" style="background: #2980b9; padding: 8px 15px;" onclick="addWater(500)">+500ml</button>
+                 </div>
+               </div>
 
-  <!-- External JavaScript Link -->
-  <script src="script.js"></script>
 
-</body>
+               <div class="glass-panel" style="padding: 20px; text-align: center; background: rgba(108, 99, 255, 0.1);">
+                 <h4 style="color: var(--text-dark);"><i class="fa-solid fa-lungs"></i> Hít Thở (4-7-8)</h4>
+                 <div class="breathing-ring" id="breathe-circle">
+                   <span class="breathing-text" id="breathe-text">Sẵn sàng?</span>
+                 </div>
+                 <button class="btn-modern" id="btn-breathe" onclick="toggleBreathing()">Bắt đầu</button>
+               </div>
+             </div>
+           </div>
+
+
+           <!-- Tab: Fortune -->
+           <div id="tab-fun" class="profile-tab" style="display: none;">
+             <h3 style="color: var(--text-dark);"><i class="fa-solid fa-wand-magic-sparkles"></i> Bói Quẻ Vui Vẻ</h3>
+             <div style="text-align: center; margin-top: 40px;">
+               <div id="fortune-card" style="font-size: 1.5rem; font-family: 'Patrick Hand'; min-height: 100px; color: var(--primary-dark);">
+                 Nhấn nút bên dưới để nhận nhiệm vụ bí mật hôm nay!
+               </div>
+               <button class="btn-modern" onclick="getFortune()" style="background: var(--accent); color: var(--text-dark);">✨ Rút Quẻ ✨</button>
+             </div>
+           </div>
+
+
+         </div>
+       </div>
+     </div>
+   </section>
+
+
+   <!-- 5. TEAM PAGE -->
+   <section id="team-view" class="view-section">
+     <div class="container">
+       <h2 class="heading-gradient-light text-center" style="font-size: 3rem;"> GIA ĐÌNH NHÀ NHÍM </h2>
+       <p style="text-align: center; color: #ffffff;">
+           Những người gieo mầm hạnh phúc - Tổng cộng hơn 40 thành viên (Bao gồm BĐH, Chuyên môn, Hậu cần, và Cố vấn).
+       </p>
+       <br><br>
+
+
+       <div class="glass-panel" style="padding: 30px; margin-bottom: 40px;">
+           <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 600;">
+               <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px;"></i>
+               Trong căn phòng này, Nhím cảm thấy hạnh phúc! Vì đây là nơi “vinh danh” những gương mặt đã đồng hành có thầy cô, có bạn bè,và bạn - những người đã “xem” dự án dù một thoáng. Mỗi người được đặt lên như một mảnh ghép - khi ghép lại, bức tranh sẽ hình thành.</p>
+           <p style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+       <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px;"></i><span style="font-weight: 700; color: rgb(145, 46, 120); ">   Nhìn vào đây để thấy Nhím lớn lên từ tập thể yêu thương nhé! </p>
+       </div>
+       <h3 style="margin-top: 30px; border-bottom: 2px solid var(--primary);">Ban Điều Hành & Cố Vấn</h3>
+       <div class="team-grid">
+         <!-- BĐH Chính (Mùa 1) -->
+         <div class="member-card glass-panel">
+           <div class="member-avatar" style="background: #FF6B6B;"><i class="fa-solid fa-crown"></i></div>
+           <h4>Bảo Hân (TL)</h4>
+           <p style="color: var(--primary);">Team Leader</p>
+         </div>
+
+
+         <div class="member-card glass-panel">
+           <div class="member-avatar" style="background: #4ECDC4;"><i class="fa-solid fa-star"></i></div>
+           <h4>Khánh Hà (DL)</h4>
+           <p style="color: var(--primary);">Deputy Leader</p>
+         </div>
+
+
+         <div class="member-card glass-panel">
+           <div class="member-avatar" style="background: #FFE66D;"><i class="fa-solid fa-book"></i></div>
+           <h4>Quỳnh Anh (SL)</h4>
+           <p style="color: var(--primary);">Specialist Lead</p>
+         </div>
+        
+         <div class="member-card glass-panel">
+           <div class="member-avatar" style="background: #FF9F43;"><i class="fa-solid fa-bullhorn"></i></div>
+           <h4>Ngọc Linh (PRL)</h4>
+           <p style="color: var(--primary);">PR Leader</p>
+         </div>
+
+
+         <!-- Cố vấn/BĐH Mùa 2 -->
+         <div class="member-card glass-panel">
+           <div class="member-avatar" style="background: #6C63FF;"><i class="fa-solid fa-glasses"></i></div>
+           <h4>Nhật Ánh Du</h4>
+           <p style="color: var(--primary);">Head Mùa 2 / Advisor</p>
+         </div>
+        
+       </div>
+      
+       <h3 style="margin-top: 40px; border-bottom: 2px solid var(--primary);">Phân chia các Team</h3>
+       <div class="team-grid">
+           <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
+               <div class="member-avatar" style="background: #4CAF50;"><i class="fa-solid fa-atom"></i></div>
+               <h4>Team Chuyên môn</h4>
+           </div>
+           <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
+               <div class="member-avatar" style="background: #2196F3;"><i class="fa-solid fa-pen-nib"></i></div>
+               <h4>Team Hậu cần</h4>
+           </div>
+           <div class="member-card glass-panel" style="background: rgba(108, 99, 255, 0.1);">
+               <div class="member-avatar" style="background: #FFC107;"><i class="fa-solid fa-tools"></i></div>
+               <h4>Team Truyền thông</h4>
+       </div>
+     </div>
+   </section>
+
+
+   <!-- 6. CONTACT PAGE -->
+   <section id="contact-view" class="view-section">
+     <h2 class="heading-gradient-light text-center" style="font-size: 3rem;"> HỘP THƯ YÊU THƯƠNG </h2>
+       <p style="text-align: center; color: #ffffff;"> Nơi đây, nơi mọi hành động thành một nhịp kết nối giữa bạn, Nhím và cộng đồng. </p> <br>
+     <div class="container" style="max-width: 1300px;">
+       <div class="glass-panel" style="padding: 30px; margin-bottom: 40px; ">
+           <p style="font-size: 1.1rem; color: var(--primary-dark); font-weight: 600;">
+               <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px;"></i>
+               Một không gian nhỏ xíu nhưng ấm vô cùng — nơi người lạ và người quen đều có thể để lại lời nhắn. Có thể là chúc mừng, góp ý, hay chỉ đơn giản là một câu hỏi <b>“Bạn ổn chứ?”</b>.</p>
+           <p style="margin-top: 15px; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 15px;">
+         <i class="fa-solid fa-star" style="color: var(--secondary); margin-right: 10px; "></i><span style="font-weight: 700; color: rgb(145, 46, 120); ">   Hộp thư mở ra như một bàn tay nắm nhẹ, lắng nghe mà không phán xét. Nhắn gửi một mảnh lòng vào đây, biết đâu bạn sẽ nhận lại một nụ cười.</p>
+       </div>
+     </div>
+     <div class="container" style="max-width: 700px;">
+       <div class="glass-panel" style="padding: 40px;">
+         <h3 style="text-align: center; margin-bottom: 20px; color: var(--text-dark);">Gửi gắm tâm tư, Nhím sẽ lắng nghe</h3>         
+         <form onsubmit="event.preventDefault(); alert('Thư đã được gửi đi! Cảm ơn bạn ❤️');">
+           <div style="margin-bottom: 20px;">
+             <label style="font-weight: 600;">Tên của bạn</label>
+             <input type="text" placeholder="Người bạn giấu tên" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-top: 5px;">
+           </div>
+           <div style="margin-bottom: 20px;">
+             <label style="font-weight: 600;">Lời nhắn nhủ</label>
+             <textarea rows="5" placeholder="Hôm nay bạn thế nào..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; margin-top: 5px;"></textarea>
+           </div>
+           <button class="btn-modern" style="width: 100%; justify-content: center;">Gửi Thư <i class="fa-solid fa-paper-plane"></i></button>
+         </form>
+       </div>
+     </div>
+   </section>
+
+
+ </main>
+
+
+ <!-- Global Footer -->
+ <footer style="padding: 20px; text-align: center; color: #ffffff; border-top: 1px solid rgba(0,0,0,0.1);">
+   <p>Dự án Nhím Tập Gieo - LSTS ACES Project | Email: 1906048@lsts.edu.vn</p>
+   <p style="font-size: 0.8rem; margin-top: 5px;">Mọi hình ảnh/nội dung đều thuộc quyền sở hữu và đã được xác nhận bởi Ban Điều Hành Dự Án.</p>
+ </footer>
+
+
+ <!-- Project Contact Footer -->
+ <footer style="background: rgba(108, 99, 255, 0.08); padding: 30px; text-align: center; border-top: 2px solid var(--primary);">
+   <h3 style="color: #ffffff; margin-bottom: 15px; text-shadow: none;">Liên Hệ Dự Án</h3>
+   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+     <div>
+       <i class="fa-solid fa-envelope" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 8px;"></i>
+       <p style="font-weight: 600;">Email</p>
+       <p style="font-size: 0.9rem;">1906048@lsts.edu.vn</p>
+     </div>
+     <div>
+       <i class="fa-solid fa-phone" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 8px;"></i>
+       <p style="font-weight: 600;">Điện Thoại</p>
+       <p style="font-size: 0.9rem;">0328261780</p>
+     </div>
+     <div>
+       <i class="fa-solid fa-location-dot" style="color: var(--secondary); font-size: 1.5rem; margin-bottom: 8px;"></i>
+       <p style="font-weight: 600;">Địa Chỉ</p>
+       <p style="font-size: 0.9rem;">THCS-THPT Đinh Thiện Lý</p>
+     </div>
+   </div>
+   <p style="font-size: 0.75rem; margin-top: 15px; color: var(--text-light);">© 2024-2025 Nhím Tập Gieo. All rights reserved.</p>
+ </footer>
+
+
+ <!-- External JavaScript Link -->
+ <script src="script.js"></script>
+
+
+ <!-- Timetable Edit Script -->
+ <script>
+   let isEditingTimetable = false;
+
+
+   function toggleEditTimetable() {
+     isEditingTimetable = !isEditingTimetable;
+     const table = document.getElementById('timetable');
+     const button = event.target.closest('button');
+    
+     if (isEditingTimetable) {
+       // Convert table cells to editable inputs
+       const cells = table.querySelectorAll('td:not(:first-child)');
+       cells.forEach(cell => {
+         if (cell.parentElement.cells[0].textContent.trim()) { // Skip header row
+           const value = cell.textContent;
+           cell.innerHTML = `<input type="text" value="${value}" style="width: 80px; padding: 5px; border: 1px solid var(--primary); border-radius: 5px;">`;
+         }
+       });
+       button.innerHTML = '<i class="fa-solid fa-floppy-disk"></i> Lưu';
+       button.style.background = 'var(--secondary)';
+     } else {
+       // Save and convert back to text
+       const inputs = table.querySelectorAll('input[type="text"]');
+       inputs.forEach(input => {
+         const cell = input.parentElement;
+         cell.textContent = input.value || input.placeholder;
+       });
+       button.innerHTML = '<i class="fa-solid fa-pencil"></i> Chỉnh Sửa';
+       button.style.background = '';
+     }
+   }
+ </script>
 </html>
