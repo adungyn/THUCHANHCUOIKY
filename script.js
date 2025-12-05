@@ -1,25 +1,18 @@
-/* --- 1. NAVIGATION LOGIC --- */
 function navigate(viewId, elmnt) {
-  // Ẩn tất cả các sections
   document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
-  // Hiển thị section mục tiêu
   const target = document.getElementById(viewId);
   target.style.display = (viewId === 'landing-view') ? 'flex' : 'block';
   
-  // Quản lý hiển thị Navbar
   const navbar = document.getElementById('navbar');
   navbar.style.display = (viewId === 'landing-view') ? 'none' : 'flex';
 
-  // Cuộn lên đầu trang
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Cập nhật trạng thái Active cho Nav Link
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   if (elmnt) elmnt.classList.add('active');
 }
 
 function enterHouse() {
-  // Điều hướng từ Landing sang Hub, đặt link đầu tiên (Nhà Chung) là active
   navigate('hub-view', document.querySelector('.nav-links .nav-item:first-child'));
   randomGreeting();
 }
@@ -28,13 +21,11 @@ function goHome() {
   if(confirm("Bạn muốn rời nhà chung và quay lại cửa chính?")) {
     navigate('landing-view');
   } else {
-    // Tìm link Nhà Chung và navigate
     const hubLink = document.querySelector(`.nav-item[onclick="navigate('hub-view', this)"]`);
     navigate('hub-view', hubLink);
   }
 }
 
-/* --- 2. HUB LOGIC (Nhím Message) --- */
 function randomGreeting() {
   const msgs = [
     "Chào mừng bạn về nhà!",
@@ -46,29 +37,24 @@ function randomGreeting() {
   document.getElementById('nhim-msg').textContent = msgs[Math.floor(Math.random() * msgs.length)];
 }
 
-/* --- 3. SEASONS LOGIC (Toggle giữa Mùa 1 và Mùa 2) --- */
 function toggleSeason(season, elmnt) {
-  // Hide both seasons
   const s1 = document.getElementById('season-1');
   const s2 = document.getElementById('season-2');
   if (s1) s1.style.display = 'none';
   if (s2) s2.style.display = 'none';
   
-  // Show the target season based on parameter (s1 or s2)
   const seasonMap = { 's1': 'season-1', 's2': 'season-2' };
   const targetSeason = document.getElementById(seasonMap[season]);
   if (targetSeason) {
     targetSeason.style.display = 'block';
   }
 
-  // Update button states (remove outline when active)
   document.querySelectorAll('#season-view .btn-modern').forEach(btn => btn.classList.add('btn-outline'));
   if (elmnt) {
     elmnt.classList.remove('btn-outline');
   }
 }
 
-/* --- 4. PROFILE TABS LOGIC (Chuyển đổi giữa các tab cá nhân) --- */
 function showTab(tabId, elmnt) {
   document.querySelectorAll('.profile-tab').forEach(el => el.style.display = 'none');
   const targetTab = document.getElementById(tabId);
@@ -80,7 +66,6 @@ function showTab(tabId, elmnt) {
   if (elmnt) elmnt.classList.add('active');
 }
 
-/* --- 5. EDIT PROFILE (Thẻ Căn Cước) --- */
 function editProfile() {
   const name = prompt("Tên mới của bạn:", document.getElementById('display-name').innerText);
   const nick = prompt("Biệt danh mới:", document.getElementById('display-nick').innerText);
@@ -88,7 +73,6 @@ function editProfile() {
   if(nick) document.getElementById('display-nick').innerText = nick;
 }
 
-/* --- 6. WELLNESS LOGIC (Uống Nước) --- */
 let water = 0;
 function addWater(amount) {
   water += amount;
@@ -99,17 +83,15 @@ function addWater(amount) {
   if(water >= 2000) alert("Tuyệt vời! Bạn đã uống đủ nước hôm nay.");
 }
 
-/* --- 7. BREATHING LOGIC (Hít Thở) --- */
 let breathingInterval;
 function toggleBreathing() {
   const btn = document.getElementById('btn-breathe');
   const text = document.getElementById('breathe-text');
   const circle = document.getElementById('breathe-circle');
   
-  if(!btn || !text || !circle) return; // Bảo vệ khỏi lỗi null
+  if(!btn || !text || !circle) return; 
 
   if(btn.innerText === "Dừng lại") {
-    // Dừng
     clearInterval(breathingInterval);
     btn.innerText = "Bắt đầu";
     btn.style.background = "var(--primary)";
@@ -117,7 +99,6 @@ function toggleBreathing() {
     circle.style.transform = "scale(1)";
     circle.style.background = `conic-gradient(from 0deg, var(--secondary), var(--primary), var(--secondary))`;
   } else {
-    // Bắt đầu
     btn.innerText = "Dừng lại";
     btn.style.background = "#e74c3c";
     
@@ -137,12 +118,10 @@ function toggleBreathing() {
     }
     
     runCycle();
-    // Khởi tạo interval với thời gian tổng chu kỳ đơn giản (4s + 7s + 8s) để đồng bộ hóa
     breathingInterval = setInterval(runCycle, 4000); 
   }
 }
 
-/* --- 8. FORTUNE LOGIC (Bói Quẻ) --- */
 function getFortune() {
   const tasks = [
     "Cười với chính mình trong gương 3 lần!",
@@ -155,7 +134,6 @@ function getFortune() {
   document.getElementById('fortune-card').innerHTML = `<span style='color: var(--primary); font-weight:bold;'>${task}</span>`;
 }
 
-/* --- 9. 3D TILT EFFECT FOR ID CARD --- */
 function initTiltEffect() {
     const card = document.querySelector('.id-card');
     const container = document.querySelector('.id-card-wrapper');
@@ -179,7 +157,6 @@ function initTiltEffect() {
 }
 
 
-/* --- 10. PARTICLE GENERATOR --- */
 function createParticles() {
   const container = document.getElementById('particles');
   if (!container) return; 
@@ -197,22 +174,17 @@ function createParticles() {
   }
 }
 
-/* --- 11. INITIALIZATION --- */
 document.addEventListener('DOMContentLoaded', function() {
     createParticles();
     initTiltEffect();
     
-    // Khởi tạo trạng thái mặc định cho Navigation và Season
     const defaultSeasonButton = document.querySelector('#season-view .btn-modern');
     if (defaultSeasonButton) {
-        // Đảm bảo S1 được hiển thị và nút S1 được active
         toggleSeason('s1', defaultSeasonButton); 
     }
     
-    // Đảm bảo tab Home/Hub được active trong navbar khi load
     const hubLink = document.querySelector(`.nav-item[onclick="navigate('hub-view', this)"]`);
     if (hubLink) {
-        // Chỉ active Hub link nếu không ở Landing page
         if (document.getElementById('landing-view').style.display !== 'flex') {
              document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
              hubLink.classList.add('active');
